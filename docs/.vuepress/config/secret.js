@@ -1,5 +1,5 @@
 module.exports = {
-    clientId: 'b8863c8b486f71d52002',
-    clientSecret: '5e118a005bca24bd208da01a54057a9349dda3bf',
+    clientId: '3494b02dc6603a6aa085',
+    clientSecret: '34215fdf3caddfcf67a65a94c808c251fa115874',
     ga: 'G-MDS3WEGK1H'
 }

@@ -11,7 +11,7 @@ module.exports = {
         serviceWorker: true,
         updatePopup: {
           message: "新的风暴已经出现",
-          buttonText: "迎接新的风暴吧"
+          buttonText: "迎接风暴吧"
         }
       },
       '@vssue/vuepress-plugin-vssue': {
@@ -20,9 +20,9 @@ module.exports = {
   
         // 其他的 Vssue 配置
         owner: 'comter1',
-        repo: 'document',
-        clientId: secret.clientId,
-        clientSecret: secret.clientSecret,
+        repo: 'docs',
+        clientId: '3494b02dc6603a6aa085',
+        clientSecret: '34215fdf3caddfcf67a65a94c808c251fa115874',
         autoCreateIssue:true
       },
       '@vuepress/google-analytics':{
