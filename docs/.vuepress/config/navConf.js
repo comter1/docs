@@ -9,7 +9,8 @@ module.exports = [
         },
         {
           text: '计算机网络', items: [
-            { text: '问题思考方法', link: '/' }
+            { text: '前言', link: '/计算机网络/前言' },
+            { text: '第一章', link: '/计算机网络/第一章' },
           ]
         }
       ]
