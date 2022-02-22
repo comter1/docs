@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>从C到C++过渡 | 浪荡人儿</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/docs/assets/img/favicon.ico">
+    <link rel="manifest" href="/docs/manifest.json">
+    <link rel="apple-touch-icon" href="/docs/icons/t1-1.png">
+    <link rel="mask-icon" href="/docs/icons/ts1.svg" color="#c">
+    <meta name="description" content="简单笔记">
+    <meta name="theme-color" content="#c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/t1-2.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="author" content="浪荡人儿">
+    <meta name="keywords" content="vuepress介绍，浪荡人儿，pwn记录">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.ecff28a1.css" as="style"><link rel="preload" href="/docs/assets/js/app.e9537389.js" as="script"><link rel="preload" href="/docs/assets/js/7.a4dad546.js" as="script"><link rel="preload" href="/docs/assets/js/2.24d63958.js" as="script"><link rel="preload" href="/docs/assets/js/12.e7404ebf.js" as="script"><link rel="preload" href="/docs/assets/js/3.27bbf4a7.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.34626023.js"><link rel="prefetch" href="/docs/assets/js/11.2ac89a3d.js"><link rel="prefetch" href="/docs/assets/js/13.4a2cc5f3.js"><link rel="prefetch" href="/docs/assets/js/14.8aaaa77a.js"><link rel="prefetch" href="/docs/assets/js/15.9005c811.js"><link rel="prefetch" href="/docs/assets/js/16.3cbf16e6.js"><link rel="prefetch" href="/docs/assets/js/17.0ddbe9a0.js"><link rel="prefetch" href="/docs/assets/js/18.c54a7be7.js"><link rel="prefetch" href="/docs/assets/js/19.c5d6248b.js"><link rel="prefetch" href="/docs/assets/js/4.de43ab5f.js"><link rel="prefetch" href="/docs/assets/js/5.e7482b35.js"><link rel="prefetch" href="/docs/assets/js/6.7bc63dac.js"><link rel="prefetch" href="/docs/assets/js/8.4e23ed57.js"><link rel="prefetch" href="/docs/assets/js/9.41582966.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.ecff28a1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><img src="/docs/assets/img/logo.png" alt="浪荡人儿" class="logo"> <span class="site-name can-hide">浪荡人儿</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学科" class="dropdown-title"><span class="title">学科</span> <span class="arrow down"></span></button> <button type="button" aria-label="学科" class="mobile-dropdown-title"><span class="title">学科</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          计算机组成原理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/计算机组成原理/装机方案.html" class="nav-link">
+  装机方案
+</a></li></ul></li><li class="dropdown-item"><h4>
+          计算机网络
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/计算机网络/前言.html" class="nav-link">
+  前言
+</a></li><li class="dropdown-subitem"><a href="/docs/计算机网络/第一章.html" class="nav-link">
+  第一章
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="社会感知数据分析" class="dropdown-title"><span class="title">社会感知数据分析</span> <span class="arrow down"></span></button> <button type="button" aria-label="社会感知数据分析" class="mobile-dropdown-title"><span class="title">社会感知数据分析</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          论文学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/社会感知数据分析/论文学习/人类行为时空特性的统计力学.html" class="nav-link">
+  人类行为时空特性的统计力学
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自己
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/计算机网络/前言.html" class="nav-link">
+  number1
+</a></li><li class="dropdown-subitem"><a href="/docs/计算机网络/第一章.html" class="nav-link">
+  第一章
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="命令语言" class="dropdown-title"><span class="title">命令语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="命令语言" class="mobile-dropdown-title"><span class="title">命令语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          语言学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/命令语言/C++基本学习.html" class="nav-link">
+  C++基础学习
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自己
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/计算机网络/前言.html" class="nav-link">
+  number1
+</a></li><li class="dropdown-subitem"><a href="/docs/计算机网络/第一章.html" class="nav-link">
+  第一章
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/docs/About/about.html" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="pwn" class="dropdown-title"><span class="title">pwn</span> <span class="arrow down"></span></button> <button type="button" aria-label="pwn" class="mobile-dropdown-title"><span class="title">pwn</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          虚拟机的搭建
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  安装
+</a></li><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  进行简单配置
+</a></li></ul></li><li class="dropdown-item"><h4>
+          本机软件安装与使用
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  IDA
+</a></li><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  吾爱破解
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="汇编语言" class="dropdown-title"><span class="title">汇编语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="汇编语言" class="mobile-dropdown-title"><span class="title">汇编语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          寄存器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  寄存器简介
+</a></li><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  字的存储
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  Guide
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学科" class="dropdown-title"><span class="title">学科</span> <span class="arrow down"></span></button> <button type="button" aria-label="学科" class="mobile-dropdown-title"><span class="title">学科</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          计算机组成原理
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/计算机组成原理/装机方案.html" class="nav-link">
+  装机方案
+</a></li></ul></li><li class="dropdown-item"><h4>
+          计算机网络
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/计算机网络/前言.html" class="nav-link">
+  前言
+</a></li><li class="dropdown-subitem"><a href="/docs/计算机网络/第一章.html" class="nav-link">
+  第一章
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="社会感知数据分析" class="dropdown-title"><span class="title">社会感知数据分析</span> <span class="arrow down"></span></button> <button type="button" aria-label="社会感知数据分析" class="mobile-dropdown-title"><span class="title">社会感知数据分析</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          论文学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/社会感知数据分析/论文学习/人类行为时空特性的统计力学.html" class="nav-link">
+  人类行为时空特性的统计力学
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自己
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/计算机网络/前言.html" class="nav-link">
+  number1
+</a></li><li class="dropdown-subitem"><a href="/docs/计算机网络/第一章.html" class="nav-link">
+  第一章
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="命令语言" class="dropdown-title"><span class="title">命令语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="命令语言" class="mobile-dropdown-title"><span class="title">命令语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          语言学习
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/命令语言/C++基本学习.html" class="nav-link">
+  C++基础学习
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自己
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/计算机网络/前言.html" class="nav-link">
+  number1
+</a></li><li class="dropdown-subitem"><a href="/docs/计算机网络/第一章.html" class="nav-link">
+  第一章
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/docs/About/about.html" class="nav-link">
+  关于我
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="pwn" class="dropdown-title"><span class="title">pwn</span> <span class="arrow down"></span></button> <button type="button" aria-label="pwn" class="mobile-dropdown-title"><span class="title">pwn</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          虚拟机的搭建
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  安装
+</a></li><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  进行简单配置
+</a></li></ul></li><li class="dropdown-item"><h4>
+          本机软件安装与使用
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  IDA
+</a></li><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  吾爱破解
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="汇编语言" class="dropdown-title"><span class="title">汇编语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="汇编语言" class="mobile-dropdown-title"><span class="title">汇编语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          寄存器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  寄存器简介
+</a></li><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  字的存储
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Group2
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  Home
+</a></li><li class="dropdown-subitem"><a href="/docs/" class="nav-link">
+  Guide
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>从C到C++过渡</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/%E5%91%BD%E4%BB%A4%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E6%9C%AC%E5%AD%A6%E4%B9%A0.html#从c到c-过渡" class="sidebar-link">从C到C++过渡</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/%E5%91%BD%E4%BB%A4%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E6%9C%AC%E5%AD%A6%E4%B9%A0.html#区别" class="sidebar-link">区别</a></li></ul></li><li><a href="/docs/%E5%91%BD%E4%BB%A4%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E6%9C%AC%E5%AD%A6%E4%B9%A0.html#c-简单语法" class="sidebar-link">C++简单语法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/%E5%91%BD%E4%BB%A4%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E6%9C%AC%E5%AD%A6%E4%B9%A0.html#枚举类型" class="sidebar-link">枚举类型</a></li><li class="sidebar-sub-header"><a href="/docs/%E5%91%BD%E4%BB%A4%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E6%9C%AC%E5%AD%A6%E4%B9%A0.html#常量" class="sidebar-link">常量</a></li><li class="sidebar-sub-header"><a href="/docs/%E5%91%BD%E4%BB%A4%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E6%9C%AC%E5%AD%A6%E4%B9%A0.html#const-关键字" class="sidebar-link">const 关键字</a></li><li class="sidebar-sub-header"><a href="/docs/%E5%91%BD%E4%BB%A4%E8%AF%AD%E8%A8%80/C++%E5%9F%BA%E6%9C%AC%E5%AD%A6%E4%B9%A0.html#运算符" class="sidebar-link">运算符</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="从c到c-过渡"><a href="#从c到c-过渡" class="header-anchor">#</a> 从C到C++过渡</h2> <p>简单C程序：</p> <div class="language- extra-class"><pre class="language-text"><code>    #include&lt;stdio.h&gt;
+    int main()
+    {
+        printf(&quot;Hello world\n&quot;);
+        return 0;
+    }
+</code></pre></div><p>简单C++程序：</p> <div class="language- extra-class"><pre class="language-text"><code>    #include&lt;iostream&gt;
+    using namespace std;
+    int main()
+    {
+        cout &lt;&lt;&quot;Hello World&quot;&lt;&lt;&quot;\n&quot;;
+        return 0;
+    }
+</code></pre></div><h3 id="区别"><a href="#区别" class="header-anchor">#</a> 区别</h3> <p>首先，一点一点来对比一下，从第一行开始</p> <p>相同：</p> <p>1.#include是一个预处理指令，用来引入头文件<br>
+2.都包含了main()函数，代码从main()函数开始执行<br>
+3.return 0;语句表示退出程序</p> <p>不同：</p> <p>1.头文件的区别：C语言头文件一般为xxxx.h;而C++文件一般为cxxxx<br>
+2.C++多了一行using namespace std；这是在告诉编译器使用std命名空间，这是一个在C中未出现过的概念<br>
+3.输出形式的变化<br>
+4.endl，这将在每一行后插入一个换行符，&lt;&lt; 运算符用于向屏幕传多个值，sizeof() 函数用来获取各种数据类型的大小</p> <h2 id="c-简单语法"><a href="#c-简单语法" class="header-anchor">#</a> C++简单语法</h2> <p>预处理和C程序一样，都是#加上include<br>
+头文件 xxx.h改成cxxx</p> <p>C++数据类型：</p> <table><thead><tr><th style="text-align:left;">类型</th> <th style="text-align:left;">关键字</th></tr></thead> <tbody><tr><td style="text-align:left;">布尔型</td> <td style="text-align:left;">bool</td></tr> <tr><td style="text-align:left;">字符型</td> <td style="text-align:left;">char</td></tr> <tr><td style="text-align:left;">整型</td> <td style="text-align:left;">int</td></tr> <tr><td style="text-align:left;">浮点型</td> <td style="text-align:left;">float</td></tr> <tr><td style="text-align:left;">双浮点型</td> <td style="text-align:left;">double</td></tr> <tr><td style="text-align:left;">无类型</td> <td style="text-align:left;">void</td></tr> <tr><td style="text-align:left;">宽字符型</td> <td style="text-align:left;">wchar_t</td></tr></tbody></table> <p><code>wchar_t : typedef short int wchar_t;</code></p> <p>所以wchar_t实际的空间和short int是一样的</p> <p>一些基本类型可以使用一个或者多个类型修饰符进行修饰：signed unsigned short long</p> <p>typedef可以用来为一个已有的类型取一个新的名字<br>
+例如：  <code>typedef int nose;</code></p> <p>那么<code>int m;</code> 就可以变成 <code>nose m;</code></p> <h3 id="枚举类型"><a href="#枚举类型" class="header-anchor">#</a> 枚举类型</h3> <p>枚举类型(enumeration)是C++中的一种派生数据类型，它是由用户定义的若干枚举常量的集合。</p> <p>如果一个变量只有几种可能的值，可以定义为枚举(enumeration)类型。所谓&quot;枚举&quot;是指将变量的值一一列举出来，变量的值只能在列举出来的值的范围内。
+创建枚举，需要使用关键字 enum。枚举类型的一般形式为：</p> <p>enum 枚举名{
+标识符[=整型常数],
+标识符[=整型常数],
+...
+标识符[=整型常数]
+} 枚举变量;</p> <p>如果枚举没有初始化, 即省掉&quot;=整型常数&quot;时, 则从第一个标识符开始。</p> <p>例如，下面的代码定义了一个颜色枚举，变量 c 的类型为 color。最后，c 被赋值为 &quot;blue&quot;。</p> <div class="language- extra-class"><pre class="language-text"><code>enum color { red, green, blue } c;
+c = blue;
+</code></pre></div><p>默认情况下，第一个名称的值为 0，第二个名称的值为 1，第三个名称的值为 2，以此类推。但是，您也可以给名称赋予一个特殊的值，只需要添加一个初始值即可。例如，在下面的枚举中，green 的值为 5。</p> <div class="language- extra-class"><pre class="language-text"><code>enum color { red, green=5, blue };
+</code></pre></div><p>在这里，blue 的值为 6，因为默认情况下，每个名称都会比它前面一个名称大 1，但 red 的值依然为 0。</p> <h3 id="常量"><a href="#常量" class="header-anchor">#</a> 常量</h3> <h4 id="整数常量"><a href="#整数常量" class="header-anchor">#</a> 整数常量</h4> <p>整数常量可以是十进制、八进制或十六进制的常量。前缀指定基数：0x 或 0X 表示十六进制，0 表示八进制，不带前缀则默认表示十进制。</p> <p>整数常量也可以带一个后缀，后缀是 U 和 L 的组合，U 表示无符号整数（unsigned），L 表示长整数（long）。后缀可以是大写，也可以是小写，U 和 L 的顺序任意。</p> <p>下面列举几个整数常量的实例：</p> <table><thead><tr><th style="text-align:left;">实例</th> <th style="text-align:left;">解释</th></tr></thead> <tbody><tr><td style="text-align:left;">212</td> <td style="text-align:left;">合法的</td></tr> <tr><td style="text-align:left;">215u</td> <td style="text-align:left;">合法的</td></tr> <tr><td style="text-align:left;">0xFeel</td> <td style="text-align:left;">合法的</td></tr> <tr><td style="text-align:left;">078</td> <td style="text-align:left;">非法的，8不是八进制数字</td></tr> <tr><td style="text-align:left;">032UU</td> <td style="text-align:left;">非法的：不能重复后缀</td></tr></tbody></table> <p>以下是各种类型的整数常量的实例：</p> <table><thead><tr><th style="text-align:left;">实例</th> <th style="text-align:left;">解释</th></tr></thead> <tbody><tr><td style="text-align:left;">85</td> <td style="text-align:left;">十进制</td></tr> <tr><td style="text-align:left;">0213</td> <td style="text-align:left;">八进制</td></tr> <tr><td style="text-align:left;">0x4b</td> <td style="text-align:left;">十六进制</td></tr> <tr><td style="text-align:left;">30</td> <td style="text-align:left;">整数</td></tr> <tr><td style="text-align:left;">30u</td> <td style="text-align:left;">无符号整数</td></tr> <tr><td style="text-align:left;">30l</td> <td style="text-align:left;">长整数</td></tr> <tr><td style="text-align:left;">30ul</td> <td style="text-align:left;">无符号长整数</td></tr></tbody></table> <h4 id="浮点常量"><a href="#浮点常量" class="header-anchor">#</a> 浮点常量</h4> <p>浮点常量由整数部分、小数点、小数部分和指数部分组成。您可以使用小数形式或者指数形式来表示浮点常量。</p> <p>当使用小数形式表示时，必须包含整数部分、小数部分，或同时包含两者。当使用指数形式表示时， 必须包含小数点、指数，或同时包含两者。带符号的指数是用 e 或 E 引入的。</p> <p>下面列举几个浮点常量的实例：
+3.14159       // 合法的
+314159E-5L    // 合法的
+510E          // 非法的：不完整的指数
+210f          // 非法的：没有小数或指数
+.e55          // 非法的：缺少整数或分数</p> <h4 id="布尔常量"><a href="#布尔常量" class="header-anchor">#</a> 布尔常量</h4> <p>布尔常量共有两个，它们都是标准的 C++ 关键字：</p> <div class="language- extra-class"><pre><code>true 值代表真。
+false 值代表假。
+</code></pre></div><p>我们不应把 true 的值看成 1，把 false 的值看成 0。</p> <h3 id="const-关键字"><a href="#const-关键字" class="header-anchor">#</a> const 关键字</h3> <p>用 const 前缀声明指定类型的常量，如下所示：</p> <p><code>const type variable = value;</code></p> <p>具体请看下面的实例：
+实例</p> <div class="language- extra-class"><pre class="language-text"><code>#include &lt;iostream&gt;
+using namespace std;
+ 
+int main()
+{
+   const int  LENGTH = 10;
+   const int  WIDTH  = 5;
+   const char NEWLINE = '\n';
+   int area;  
+   
+   area = LENGTH * WIDTH;
+   cout &lt;&lt; area;
+   cout &lt;&lt; NEWLINE;
+   return 0;
+}
+</code></pre></div><p>当上面的代码被编译和执行时，它会产生下列结果：</p> <p><code>50</code></p> <h3 id="运算符"><a href="#运算符" class="header-anchor">#</a> 运算符</h3> <h4 id="逻辑运算符"><a href="#逻辑运算符" class="header-anchor">#</a> 逻辑运算符</h4> <p>设置A = 1 ; B = 0;</p> <table><thead><tr><th style="text-align:left;">运算符</th> <th style="text-align:left;">描述</th> <th style="text-align:left;">实例</th></tr></thead> <tbody><tr><td style="text-align:left;">&amp;&amp;</td> <td style="text-align:left;">逻辑与运算符</td> <td style="text-align:left;">(A &amp;&amp; B) 为 false。</td></tr> <tr><td style="text-align:left;">'</td> <td style="text-align:left;"></td> <td style="text-align:left;">'</td></tr> <tr><td style="text-align:left;">！</td> <td style="text-align:left;">逻辑非运算符</td> <td style="text-align:left;">!(A &amp;&amp; B) 为 true。</td></tr></tbody></table> <h4 id="杂项运算符"><a href="#杂项运算符" class="header-anchor">#</a> 杂项运算符</h4> <table><thead><tr><th style="text-align:left;">运算符</th> <th style="text-align:left;">描述</th></tr></thead> <tbody><tr><td style="text-align:left;">sizeof</td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;">Condition?X:Y</td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;"></td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;"></td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;"></td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;"></td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;"></td> <td style="text-align:left;"></td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <!---->  <!----></main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/docs/assets/js/app.e9537389.js" defer></script><script src="/docs/assets/js/7.a4dad546.js" defer></script><script src="/docs/assets/js/2.24d63958.js" defer></script><script src="/docs/assets/js/12.e7404ebf.js" defer></script><script src="/docs/assets/js/3.27bbf4a7.js" defer></script>
+  </body>
+</html>
